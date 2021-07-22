@@ -2,16 +2,15 @@ function fibonacci(num) {
   if (num < 2) {
     return num
   }
-  let count = 0
-  let first = 0
-  let second = 1
-  let acc = 0
+  let count = 2
+  let first = 1
+  let second = 2
   while (count <= num) {
-    second += first
-    first = second - first
     if (count ===  num) {
       return first
     }
+    second += first
+    first = second - first
     count++
   }
 }
@@ -22,13 +21,31 @@ if (require.main === module) {
   console.log("=>", fibonacci(0));
 
   console.log("Expecting: 1");
+  console.log("=>", fibonacci(1));
+
+  console.log("Expecting: 1");
   console.log("=>", fibonacci(2));
 
   console.log("Expecting: 2");
   console.log("=>", fibonacci(3));
+  
+  console.log("Expecting: 3");
+  console.log("=>", fibonacci(4));
 
   console.log("Expecting: 5");
   console.log("=>", fibonacci(5));
+
+  console.log("Expecting: 8");
+  console.log("=>", fibonacci(6));
+
+  console.log("Expecting: 13");
+  console.log("=>", fibonacci(7));
+
+  console.log("Expecting: 21");
+  console.log("=>", fibonacci(8));
+
+  console.log("Expecting: 34");
+  console.log("=>", fibonacci(9));
 
   console.log("Expecting: 55");
   console.log("=>", fibonacci(10));
